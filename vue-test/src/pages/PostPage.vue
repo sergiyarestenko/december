@@ -17,6 +17,7 @@
     <div>
       <my-input
         v-model="searchQuery"
+        v-focus
         placeholder="Поиск...."
         @update:model-value="setSearchQuery"
       />
@@ -43,7 +44,7 @@
       fugit. Officiis vitae tenetur corrupti delectus?
     </p>
     <div
-      ref="observer"
+      v-intersection="fetchMorePosts"
       class="observer"
     />
   </div>
@@ -99,17 +100,6 @@
     },
     mounted() {
       this.fetchPosts()
-      const options = {
-        rootMargin: '0px',
-        threshold: 1.0
-      }
-      const callback = (entries: any) => {
-        if (entries[0]?.isIntersecting && this.page < this.totalPages) {
-          this.fetchMorePosts()
-        }
-      }
-      const observer = new IntersectionObserver(callback, options)
-      observer.observe(this.$refs.observer as HTMLElement)
     },
     methods: {
       createPost(newPost: IPost) {
