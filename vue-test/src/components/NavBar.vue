@@ -33,12 +33,12 @@
 
 <style scoped>
   .navbar {
-    height: 50px;
-    background-color: lightgray;
-    box-shadow: 2px 2px 4px gray;
     display: flex;
     align-items: center;
+    box-shadow: 2px 2px 4px gray;
+    background-color: lightgray;
     padding: 0 15px;
+    height: 50px;
   }
   .navbar__btns {
     margin-left: auto;
