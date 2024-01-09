@@ -20,8 +20,6 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
-    'prettier/prettier': 'error',
-
     'vue/no-mutating-props': 'off',
     'vue/order-in-components': [
       'error',
@@ -105,6 +103,12 @@ module.exports = {
       'error',
       {
         groups: []
+      }
+    ],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto'
       }
     ]
   }
